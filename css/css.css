@@ -1,0 +1,90 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f6f7f9;
+            color: #1e2e51;
+            font-family: system-ui, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        main {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid rgb(225, 221, 225);
+            box-shadow: 0px 0px 12px #e0aac7;
+            border-radius: 12px;
+            background: #58486e;
+            background: url(/img2/cat2.png), linear-gradient(180deg,  #cd9fc9 , #967fb7, #58486e 100%);
+         
+            background-size: contain;
+            
+            color: #fff;
+            font-size: 32px;
+            font-weight: 600;
+            cursor: pointer;
+            text-shadow: 0px 0px 10px #cdbb6f;
+        }
+
+        ul {
+            background-color: #bdb0c1;
+            /* background-image: url(../img2/pngwing.com\ \(4\).png); */
+            background-size: cover;
+            list-style: square;
+            margin: 16px 0 0;
+            padding: 0;
+            /* background: #fff; */
+            border: 1px solid #e1e4ea;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-bottom: 1px solid #e1e4ea;
+        }
+
+        li:last-child {
+            border-bottom: 0;
+        }
+
+   
+        .n {
+            width: 28px;
+            text-align: right;
+            font-size: 13px;
+            color: #cbcfda;
+        }
+
+        .die {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #eef0f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .die.pair {
+            background: #3fb950;
+            color: #fff;
+        }
+
+        .die.triple {
+            background: #3fb950;
+            color: #fff;
+        }
+
