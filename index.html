@@ -2,51 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dice Layout</title>
-    <link rel="stylesheet" href="./css/css.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dice Layout</title>
+        <link rel="stylesheet" href="./css/css.css">
 
 </head>
 
 <body>
-    <main>
+        <main>
 
-        <button class="btn" type="button">擲骰子</button>
+                <button class="btn" type="button">擲骰子</button>
 
-        <ul>
-            <li><span class="n">1</span><span class="die">1</span><span class="die">5</span><span class="die">6</span>
-            </li>
-            <li><span class="n">2</span><span class="die">2</span><span class="die">4</span><span class="die">6</span>
-            </li>
-            <li><span class="n">3</span><span class="die triple">5</span><span class="die triple">5</span><span
-                    class="die triple">5</span></li>
-            <li><span class="n">4</span><span class="die pair">3</span><span class="die pair">3</span><span
-                    class="die">1</span></li>
-            <li><span class="n">5</span><span class="die">2</span><span class="die">6</span><span class="die">4</span>
-            </li>
-            <li><span class="n">6</span><span class="die pair">4</span><span class="die pair">4</span><span
-                    class="die">2</span></li>
-            <li><span class="n">7</span><span class="die triple">1</span><span class="die triple">1</span><span
-                    class="die triple">1</span></li>
-            <li><span class="n">8</span><span class="die">6</span><span class="die">3</span><span class="die">5</span>
-            </li>
-            <li><span class="n">9</span><span class="die">2</span><span class="die pair">5</span><span
-                    class="die pair">5</span></li>
-            <li><span class="n">10</span><span class="die">3</span><span class="die">4</span><span class="die">6</span>
-            </li>
-            <li><span class="n">11</span><span class="die pair">6</span><span class="die pair">6</span><span
-                    class="die">3</span></li>
-            <li><span class="n">12</span><span class="die">1</span><span class="die">2</span><span class="die">4</span>
-            </li>
-            <li><span class="n">13</span><span class="die pair">4</span><span class="die">5</span><span
-                    class="die pair">4</span></li>
-            <li><span class="n">14</span><span class="die triple">3</span><span class="die triple">3</span><span
-                    class="die triple">3</span></li>
-            <li><span class="n">15</span><span class="die">5</span><span class="die">2</span><span class="die">1</span>
-            </li>
-        </ul>
-    </main>
+                <ul>
+                        <li><span class="n">1</span><span class="die">1</span><span class="die">5</span><span
+                                        class="die">6</span>
+                        </li>
+                        <li><span class="n">2</span><span class="die">2</span><span class="die">4</span><span
+                                        class="die">6</span>
+                        </li>
+                        <li><span class="n">3</span><span class="die triple">5</span><span
+                                        class="die triple">5</span><span class="die triple">5</span></li>
+                        <li><span class="n">4</span><span class="die pair">3</span><span class="die pair">3</span><span
+                                        class="die">1</span></li>
+                        <li><span class="n">5</span><span class="die">2</span><span class="die">6</span><span
+                                        class="die">4</span>
+                        </li>
+                        <li><span class="n">6</span><span class="die pair">4</span><span class="die pair">4</span><span
+                                        class="die">2</span></li>
+                        <li><span class="n">7</span><span class="die triple">1</span><span
+                                        class="die triple">1</span><span class="die triple">1</span></li>
+                        <li><span class="n">8</span><span class="die">6</span><span class="die">3</span><span
+                                        class="die">5</span>
+                        </li>
+                        <li><span class="n">9</span><span class="die">2</span><span class="die pair">5</span><span
+                                        class="die pair">5</span></li>
+                        <li><span class="n">10</span><span class="die">3</span><span class="die">4</span><span
+                                        class="die">6</span>
+                        </li>
+                        <li><span class="n">11</span><span class="die pair">6</span><span class="die pair">6</span><span
+                                        class="die">3</span></li>
+                        <li><span class="n">12</span><span class="die">1</span><span class="die">2</span><span
+                                        class="die">4</span>
+                        </li>
+                        <li><span class="n">13</span><span class="die pair">4</span><span class="die">5</span><span
+                                        class="die pair">4</span></li>
+                        <li><span class="n">14</span><span class="die triple">3</span><span
+                                        class="die triple">3</span><span class="die triple">3</span></li>
+                        <li><span class="n">15</span><span class="die">5</span><span class="die">2</span><span
+                                        class="die">1</span>
+                        </li>
+                </ul>
+        </main>
+
+        <script>
+                const btn = document.querySelector('.btn');
+                const ul = document.querySelector('ul')
+                btn.addEventListener('click', function () {
+                        console.log("U沒有");
+                        ul.textContent = '';
+
+                        for (let i = 0; i < 15; i++) {
+                                // console.log(i);
+                                let a01 = genDice();
+                                let a02 = genDice();
+                                let a03 = genDice();
+
+                                console.log(a01, a02, a03);
+                                if (a01 === a02 && a01 === a03) {
+                                        ul.innerHTML = ul.innerHTML +
+                                                `<li>
+                                                <span class="n">${i + 1}</span>
+                                                <span class="die triple">${a01}</span>
+                                                <span class="die triple">${a02}</span>
+                                                <span class="die triple">${a03}</span>
+                                        </li>`;
+                                } else {
+                                        ul.innerHTML = ul.innerHTML +
+                                                `<li>
+                                                <span class="n">${i + 1}</span>
+                                                <span class="die">${a01}</span>
+                                                <span class="die">${a02}</span>
+                                                <span class="die">${a03}</span>
+                                        </li>`;
+                                }
+
+                        }
+
+                })
+                //產生一顆甩子
+                function genDice() {
+                        return Math.floor(Math.random() * 6) + 1;
+                }
+        </script>
 </body>
 
 </html>

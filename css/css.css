@@ -21,21 +21,36 @@
             border: 2px solid rgb(225, 221, 225);
             box-shadow: 0px 0px 12px #e0aac7;
             border-radius: 12px;
-            background: #58486e;
-            background: url(/img2/cat2.png), linear-gradient(180deg,  #cd9fc9 , #967fb7, #58486e 100%);
-         
+            background: #b0a8bb;
+            background: url(../img2/cat2.png), linear-gradient(180deg, #ead1e9 30%, #d3beee7e 50%, #e5cda9 100%);
+
             background-size: contain;
-            
-            color: #fff;
+
+            color: #f4e7f7;
             font-size: 32px;
             font-weight: 600;
             cursor: pointer;
             text-shadow: 0px 0px 10px #cdbb6f;
+            user-select: none;
+            /* 避免連點按鈕時出現藍色文字選取反白 */
+            -webkit-user-select: none;
+
+        }
+
+        .btn:hover {
+            background: url(../img2/cat2.png), linear-gradient(180deg, #f4e9cc 30%, #e7d2b47e 50%, #e5cda9 100%);
+            background-size: contain;
+        }
+
+        .btn:active {
+            background: url(../img2/cat2.png), linear-gradient(180deg, #d1e3ea 30%, #c7e7b47e 50%, #e5cda9 100%);
+            background-size: contain;
+
         }
 
         ul {
             background-color: #bdb0c1;
-            /* background-image: url(../img2/pngwing.com\ \(4\).png); */
+            /* background-image: url(..../img2/pngwing.com\ \(4\).png); */
             background-size: cover;
             list-style: square;
             margin: 16px 0 0;
@@ -58,7 +73,7 @@
             border-bottom: 0;
         }
 
-   
+
         .n {
             width: 28px;
             text-align: right;
@@ -79,12 +94,11 @@
         }
 
         .die.pair {
-            background: #3fb950;
+            background: #BCD6CE;
             color: #fff;
         }
 
         .die.triple {
-            background: #3fb950;
+            background: #BCD6CE;
             color: #fff;
         }
-
